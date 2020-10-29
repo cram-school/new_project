@@ -9,9 +9,20 @@ const users = sequelize.define(
       allowNull: false,
       autoIncrement: true
     },
-    name: {
+    username: {
       type: Sequelize.STRING(30),
       allowNull: false,
+      unique: true
+    },
+    nick_name: {
+      type: Sequelize.STRING(30),
+      allowNull: false,
+      unique: true
+    },
+    password: {
+      type: Sequelize.STRING(16),
+      allowNull: false,
+      is: /^.*(?=.{6,16})(?=.*\d)(?=.*[A-Z]{1,})(?=.*[a-z]{1,})(?=.*[!@#$%^&*?]).*$/
     },
     age: {
       type: Sequelize.INTEGER,
@@ -29,22 +40,22 @@ const users = sequelize.define(
     phone: {
       type: Sequelize.STRING(11),
       allowNull: false,
+      unique: true,
+      is: /^[1][345789]\d{9}$/
+    },
+    email: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true,
+      is: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
     },
     avatar: {
       type: Sequelize.STRING,
       allowNull: false,
-    },
-    wechat_id: {
-      type: Sequelize.STRING(64),
-      allowNull: false,
-    },
-    wechat_name: {
-      type: Sequelize.STRING(30),
-      allowNull: false,
     }
   },
   {
-    timestamps: true  // 不自动生成时间
+    timestamps: true  // 自动生成时间
   }
 );
 // 导出数据模型model

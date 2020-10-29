@@ -1,23 +1,17 @@
 //initData.js
 const users = require('../model/user')
-// const order =require('../model/order')
-// const order_goods =require('../model/order_goods')
-// const goods =require('../model/goods')
-// const goods_image =require('../model/goods_image')
-// const cart =require('../model/cart')
-// const cart_goods =require('../model/cart_goods')
-// const categories =require('../model/categories')
-// const banners =require('../model/banners')
-// const activities =require('../model/activities')
-// const hot_goods =require('../model/hot_goods')
-// order_goods.sync({force: true});
-// order.sync({force: true});
-// goods.sync({force: true});
-// goods_image.sync({force: true});
-// cart.sync({force: true});
-// cart_goods.sync({force: true});
-// categories.sync({force: true});
-// banners.sync({force: true});
-// activities.sync({force: true});
-// hot_goods.sync({force: true});
 users.sync({force: true});
+const articles = require('../model/articles')
+articles.sync({force: true});
+const fans = require('../model/fans')
+fans.sync({force: true});
+const photos = require('../model/photos')
+photos.sync({force: true});
+const subscribe = require('../model/subscribe')
+subscribe.sync({force: true});
+const black_list = require('../model/black_list')
+black_list.sync({force: true});
+const collect_list = require('../model/collect_list')
+collect_list.sync({force: true});
+const like_list = require('../model/like_list')
+like_list.sync({force: true});
