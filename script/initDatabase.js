@@ -15,3 +15,5 @@ const collect_list = require('../model/collect_list')
 collect_list.sync({force: true});
 const like_list = require('../model/like_list')
 like_list.sync({force: true});
+const comments = require('../model/comments')
+comments.sync({force: true});
