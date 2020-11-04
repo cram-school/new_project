@@ -14,14 +14,6 @@ const black_list = sequelize.define(
     remark: {
       type: Sequelize.STRING,
       allowNull: true,
-    },
-    user_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
-    black_list_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -39,11 +31,11 @@ users.hasOne(black_list, {
 })
 
 black_list.belongsTo(users, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 });
 
 black_list.belongsTo(users, {
-  foreignKey: 'black_list_id'
+  foreignKey: 'black_listId'
 });
 
 // 导出数据模型model

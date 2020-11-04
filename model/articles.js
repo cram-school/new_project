@@ -26,10 +26,6 @@ const articles = sequelize.define(
     content: {
       type: Sequelize.TEXT,
       allowNull: false
-    },
-    author_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -45,7 +41,7 @@ users.hasOne(articles, {
 })
 
 articles.belongsTo(users, {
-  foreignKey: 'author_id'
+  foreignKey: 'userId'
 });
 
 // 导出数据模型model

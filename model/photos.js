@@ -15,14 +15,6 @@ const photos = sequelize.define(
     url: {
       type: Sequelize.STRING,
       allowNull: false,
-    },
-    user_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
-    article_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -38,7 +30,7 @@ users.hasOne(photos, {
 })
 
 photos.belongsTo(users, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 });
 
 articles.hasOne(photos, {
@@ -47,7 +39,7 @@ articles.hasOne(photos, {
 })
 
 photos.belongsTo(articles, {
-  foreignKey: 'article_id'
+  foreignKey: 'articleId'
 });
 
 

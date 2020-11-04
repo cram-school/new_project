@@ -9,10 +9,6 @@ const like_list = sequelize.define(
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
-    },
-    article_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -29,7 +25,7 @@ articles.hasOne(like_list, {
 })
 
 like_list.belongsTo(articles, {
-  foreignKey: 'article_id'
+  foreignKey: 'articleId'
 });
 
 // 导出数据模型model

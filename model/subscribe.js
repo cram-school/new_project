@@ -14,14 +14,6 @@ const subscribes = sequelize.define(
     remark: {
       type: Sequelize.STRING,
       allowNull: true,
-    },
-    user_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
-    subscribe_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -37,11 +29,11 @@ users.hasOne(subscribes, {
 })
 
 subscribes.belongsTo(users, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 });
 
 subscribes.belongsTo(users, {
-  foreignKey: 'subscribe_id'
+  foreignKey: 'subscribeId'
 });
 
 

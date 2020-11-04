@@ -15,14 +15,6 @@ const comments = sequelize.define(
     content: {
       type: Sequelize.STRING(200),
       allowNull: false,
-    },
-    user_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
-    article_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
@@ -38,7 +30,7 @@ users.hasOne(comments, {
 })
 
 comments.belongsTo(users, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 });
 
 articles.hasOne(comments, {
@@ -47,7 +39,7 @@ articles.hasOne(comments, {
 })
 
 comments.belongsTo(articles, {
-  foreignKey: 'article_id'
+  foreignKey: 'articleId'
 });
 
 // 导出数据模型model
